@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorlink - Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("images/escieloazul.jpg"); /* Fondo de imagen del cielo azul */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #ffffff;
+            background-color: rgba(0, 122, 204, 0.2); /* Fondo casi transparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+            backdrop-filter: blur(10px) brightness(70%); /* Aplica el efecto de vidrio */
+        }
+
+        .logo {
+            text-align: left;
+            margin: 10px; /* Añadir margen alrededor del logo */
+        }
+
+        .logo img {
+            width: 100px; /* Ajusta el tamaño del logo */
+        }
+
+        .form {
+            text-align: center;
+            padding: 20px; /* Ajustar el espaciado del formulario */
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .login-button {
+            background-color: rgba(0, 123, 204, 0.6); /* Color de fondo azulino */
+            color: #ffffff;
+            border: 2px solid rgba(0, 123, 204, 0.6);
+            border-radius: 10px;
+            padding: 15px 30px; /* Aumentar el tamaño del botón */
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .form .signup-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .signup-link {
+            margin: 10px 0; /* Espacio entre los enlaces */
+            color: #00BFFF; /* Color azulino */
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline; /* Subrayado en el hover */
+        }
+
+        .register-button {
+            background-color: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 15px 30px; /* Aumentar el tamaño del botón */
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #001F3D; /* Azul profundo */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed; /* Fijar el footer en la parte inferior */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="images/logo.jpg" alt="Logo de la aplicación">
+    </div>
+    <div class="container">
+        <div class="form">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="Ingrese su nombre de usuario">
+            <input type="password" placeholder="Ingrese su contraseña">
+            <button class="login-button">Iniciar Sesión</button>
+            <div class="signup-links">
+                <a class="signup-link" href="#">¿No tienes cuenta?</a>
+                <button class="register-button">Regístrate en TutorLink</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2023 TutorLink
+    </div>
+</body>
+</html>

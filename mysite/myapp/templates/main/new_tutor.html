@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorlink - Materiales</title>
+    <!-- Vincula el archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" id="sidebar">
+            <span class="close-button" onclick="toggleSidebar()">✖</span>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Logo de la aplicación">
+            </div>
+            <div class="menu-options">
+                <button class="btn btn-light menu-button" onclick="redirectTo('foro.html')">Foro</button>
+                <button class="btn btn-light menu-button" onclick="redirectTo('tutoria.html')">Tutoría</button>
+                <button class="btn btn-light menu-button" onclick="redirectTo('material.html')">Materiales</button>
+                <button class="btn btn-light menu-button exit" onclick="redirectTo('principal.html')">Exit</button>
+            </div>
+        </div>
+        <button class="btn btn-info btn-lg custom-btn" onclick="toggleSidebar()">☰</button>
+
+        <!-- ... Código anterior ... -->
+
+        <div class="content">
+            <div class="user-profile" onclick="window.location.href='perfil.html'">
+                <img src="images/user-avatar.png" alt="Avatar del usuario">
+                <p>Usuario</p>
+            </div>
+            <div class="title">
+                <div class="title-content">
+                    <div class="slogan">
+                        <p>Tutorlink, encuentra el material que estabas buscando!</p>
+                    </div>
+                    <div class="main-image">
+                        <img src="images/material.png" alt="Imagen principal">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form">
+                <h2>Registro de Nuevo Tutor</h2>
+                <div class="form-group">
+                    <label for="video">Video Demo (opcional):</label>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" class="form-control-file" name="file">
+                        <button type="submit">Upload File</button>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio por Revisión (en soles):</label>
+                    <input type="number" class="form-control" id="precio" placeholder="Ingresa el precio">
+                </div>
+                <div class="form-group">
+                    <label for="contacto">Número de Contacto:</label>
+                    <input type="tel" class="form-control" id="contacto" placeholder="Ingresa tu número de contacto">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción (carta de presentación):</label>
+                    <textarea class="form-control" id="descripcion" rows="5" placeholder="Escribe una descripción sobre ti"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="registrarTutor()">Registrarse</button>
+            </div>
+        </div>
+
+        <!-- ... Código posterior ... -->
+
+
+
+
+    </div>
+    <!-- Footer -->
+    <div class="footer fixed-bottom bg-dark text-white text-center p-2">
+        Copyright © 2023 TutorLink
+    </div>
+
+
+    <!-- Vincula el archivo JavaScript de Bootstrap (requiere jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector(".sidebar");
+            var content = document.querySelector(".content");
+            sidebar.classList.toggle("sidebar-open");
+            content.classList.toggle("sidebar-open");
+        }
+
+        function registrarTutor() {
+            // Aquí puedes agregar la lógica para registrar al tutor
+            // Puedes obtener los valores de los campos y enviarlos al servidor
+            // por medio de AJAX o alguna otra forma según tu implementación
+
+            // Mostrar mensaje de alerta
+            alert("Ahora eres tutor");
+
+            // Redireccionar después de mostrar el mensaje
+            redirectTo('perfil.html');
+        }
+
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+
+</body>
+</html>
